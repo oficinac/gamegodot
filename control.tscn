@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bemcs2wd2jue7"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_aruqa"]
+[ext_resource type="Texture2D" uid="uid://bmmih0jl3m6pa" path="res://sprites/mw.png" id="1_f6k2c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aruqa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1101.0
+offset_bottom = 516.0
+texture = ExtResource("1_f6k2c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -74.0
+offset_right = 695.0
+offset_bottom = 195.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="btn_start" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btn_start" to="." method="_on_btn_start_pressed"]
